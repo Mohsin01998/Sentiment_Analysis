@@ -1,6 +1,5 @@
 from flask import Flask, request,jsonify,render_template
 import joblib
-import pandas as pd
 import pickle
 
 
@@ -11,7 +10,9 @@ app=Flask(__name__)
 def predict():
     if request.method == 'POST':
         content = request.form['review']
-        r = pd.Series(content)
+        r = []
+        r.append(content)
+        # r = pd.Series(content)
         vectorizer = joblib.load('vectorizer/vectorizer1.pkl')
         review = vectorizer.transform(r)
         print(review)
@@ -31,7 +32,7 @@ def predict():
 
 
 if __name__ =='__main__':
-    app.run(debug=True,port=5000)
+    app.run(debug=True,port=8000)
 
 
 
