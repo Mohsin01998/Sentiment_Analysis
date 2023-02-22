@@ -36,9 +36,6 @@ if __name__ =='__main__':
 
 
 
-
-
-
 # def predict():
 #     if request.method == 'POST':
 #         content = request.form['review']
