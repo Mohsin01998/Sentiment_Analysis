@@ -15,7 +15,6 @@ def predict():
         # r = pd.Series(content)
         vectorizer = joblib.load('vectorizer/vectorizer1.pkl')
         review = vectorizer.transform(r)
-        print(review)
         classifier = joblib.load('model/model_2.pkl')
         prediction = classifier.predict(review)
         if prediction == 1.0:
@@ -31,8 +30,7 @@ def predict():
 
 
 
-if __name__ =='__main__':
-    app.run(debug=True,port=8000)
+app.run(debug=True)
 
 
 
